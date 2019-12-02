@@ -1,0 +1,26 @@
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+                <form #userForm="ngForm" (ngSubmit)="userformData(userForm)">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Name</label>
+                        <input type="text" class="form-control" placeholder="Example input" name="userName" 
+                         ngModel #userName="ngModel" required minlength="4" maxlength="10">
+                        <small class="small" *ngIf="!userName?.valid && userName?.touched">name required</small>
+                        <small class="small" *ngIf="userName?.errors?.minlength && userName?.touched">name min 4</small>
+                        <small class="small" *ngIf="userName?.errors?.maxlength && userName?.touched">name max 6</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Email</label>
+                        <input type="text" class="form-control"  placeholder="Another input" name="Email"
+                         ngModel #Email="ngModel"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> 
+                        <small class="small" *ngIf="!Email?.errors?.required && Email?.touched">Email required</small>
+                        <small class="small" *ngIf="Email?.errors?.pattern && Email?.touched">Email Pattern</small>
+                    </div>
+                    <input type="submit"  class="btn btn-primary">
+                </form>
+                {{userForm.value | json}}
+        </div>
+    </div>
+</div>

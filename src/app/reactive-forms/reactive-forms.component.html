@@ -1,0 +1,81 @@
+
+
+<div class="container">
+    <div class="row py-4">
+        <div class="col-md-6 mx-auto">
+            <!-- ProductName.errors?.required && ProductName.touched -->
+            <form  [formGroup]="formData" (ngSubmit)="formSubmited()">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Name</label>
+                        <input type="text" class="form-control" id="inputEmail4" formControlName="UserName"  placeholder="Email">
+                        <div *ngIf="formData.get('UserName').errors?.required && formData.get('UserName')?.touched">
+                            <small>name required</small>
+                        </div>
+                         <div *ngIf="formData.get('UserName').errors?.minlength && formData.get('UserName')?.touched">
+                            <small>name minlenght 4</small>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Email</label>
+                        <input type="text" class="form-control" id="inputPassword4" formControlName="email" placeholder="Password">
+                         <div *ngIf="Email.errors?.required && Email?.touched">
+                            <small>Email required</small>
+                        </div>
+                        <div *ngIf="Email.errors?.minlength && Email?.touched">
+                            <small>Email minlenght 4</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" [(ngModel)] ="name" id="inputAddress" formControlName="address" placeholder="Address">
+                    <!-- <input type="text" class="form-control" [(ngModel)] ="name" id="inputAddress" formControlName="address" placeholder="Address"> -->
+                </div>
+                <!-- <div class="form-group">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div> -->
+                <div class="form-row" formGroupName="Address">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" formControlName="city" id="inputCity">
+                        <div *ngIf="City.errors?.required && City?.touched">
+                            <small>City required</small>
+                        </div>
+                        <div *ngIf="City.errors?.minlength && City?.touched">
+                            <small>City length 4</small>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div> -->
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" formControlName="code" id="inputZip">
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Check me out
+                        </label>
+                    </div>
+                </div> -->
+                <input type="submit" [disabled]="!formData.valid" class="btn btn-primary">
+            </form>
+              {{name}}
+        </div>
+ 
+    </div>
+    {{ formData.value | json}}
+</div>
+
+
+
+
