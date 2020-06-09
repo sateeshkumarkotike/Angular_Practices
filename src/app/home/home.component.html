@@ -1,0 +1,14 @@
+<p>home works!</p>
+
+<div class="custom" >
+  <h1 style="padding: 5px;color: red;">Dynamic Componnet Loading</h1>
+  <hr />
+  <ng-template appDynamicLoading></ng-template>
+
+</div>
+
+<app-input-output (name1Event)="name1Event($event)" (name2Event)="name2Event($event)" [name2]="name"></app-input-output>
+
+{{event1Data}}
+
+{{event2Data}}

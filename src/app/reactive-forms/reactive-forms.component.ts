@@ -16,7 +16,6 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   ngOnInit() {
-
      this.formData = this.formBuilder.group({
       UserName:[ ,[Validators.required,Validators.minLength(4)]],
        email:[,[Validators.required ,Validators.minLength(4)]],

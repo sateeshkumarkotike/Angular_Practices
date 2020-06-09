@@ -15,9 +15,12 @@ export class TemplateFormsComponent implements OnInit {
     { stateName:"Russia"}
   ]
      
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+
   }
 
   formData(userForm){

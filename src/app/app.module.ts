@@ -14,6 +14,16 @@ import { CategoriesComponent } from './categories/categories.component';
 import { TdformsComponent } from './tdforms/tdforms.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { Test1Component } from './dynamic-componet-loading/test1/test1.component';
+import { Test2Component } from './dynamic-componet-loading/test2/test2.component';
+import { DynamicDirective } from './dynamic.directive';
+import { DynamicLoadingDirective } from './dynamic-componet-loading/dynamic-loading.directive';
+import { HomeComponent } from './home/home.component';
+import { HostDirectivesComponent } from './host-binding/host-directives/host-directives.component';
+import { TestComponent } from './host-binding/test/test.component';
+import { BasicDirective } from './host-binding/basic.directive';
+import { JavaScriptPracticesComponent } from './java-script-practices/java-script-practices.component';
+import { InputOutputComponent } from './home/input-output/input-output.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +37,17 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     CategoriesComponent,
     TdformsComponent,
     TemplateFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    Test1Component,
+    Test2Component,
+    DynamicDirective,
+    DynamicLoadingDirective,
+    HomeComponent,
+    HostDirectivesComponent,
+    TestComponent,
+    BasicDirective,
+    JavaScriptPracticesComponent,
+    InputOutputComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +58,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ Test1Component,Test2Component]
 })
 export class AppModule { 
   

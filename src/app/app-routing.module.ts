@@ -10,10 +10,14 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductsComponent } from './products/products.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { HomeComponent } from './home/home.component';
+import { HostDirectivesComponent } from './host-binding/host-directives/host-directives.component';
+import { JavaScriptPracticesComponent } from './java-script-practices/java-script-practices.component';
 
 const routes: Routes = [
-  { path:'',redirectTo:'/contact' ,pathMatch:'full'},
+  { path:'',redirectTo:'/home' ,pathMatch:'full'},
+  { path:'home' ,component:HomeComponent },
+  { path:'host-binding',component:HostDirectivesComponent },
   { path:'products' ,component:ProductsComponent ,children:[
      { path:'' ,redirectTo:'ios',pathMatch:'full'} ,
      { path:'ios' ,component:IosComponent  } ,
@@ -28,12 +32,15 @@ const routes: Routes = [
   { path:'tdforms' ,component:TdformsComponent } ,
   { path:'templateDrivenFomrs' ,component:TemplateFormsComponent } ,
   { path:'reactive-forms' ,component:ReactiveFormsComponent} ,
+  { path:'java-script' ,component:JavaScriptPracticesComponent },
   { path:'**' ,redirectTo:'contact' ,pathMatch:'full'}
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {
+
+}
